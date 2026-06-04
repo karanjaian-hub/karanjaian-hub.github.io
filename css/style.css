@@ -62,6 +62,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -1347,5 +1348,65 @@ footer {
         flex-direction: column;
         gap: var(--space-sm);
         text-align: center;
+    }
+
+    /* Hero name — tighten letter spacing on mobile */
+    .hero-name {
+        letter-spacing: -1px;
+        word-break: break-word;
+    }
+
+    /* Prevent any element from causing horizontal overflow */
+    .hero-inner,
+    .hero-left,
+    .about-content,
+    .skills-grid,
+    .projects-grid,
+    .contact-buttons {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* Card tags — prevent overflow */
+    .card-tags {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+    }
+
+    /* Buttons — full width on small screens */
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================================
+   20. RESPONSIVE — SMALL MOBILE (max-width: 400px)
+   ============================================================ */
+@media (max-width: 400px) {
+    .hero-name {
+        letter-spacing: -0.5px;
+        font-size: clamp(48px, 14vw, 72px);
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .stat-number {
+        font-size: 40px;
+    }
+
+    .contact-heading {
+        font-size: clamp(32px, 10vw, 56px);
+    }
+
+    .section-title {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+
+    .container {
+        padding: 0 var(--space-sm);
     }
 }
