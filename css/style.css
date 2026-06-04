@@ -462,9 +462,14 @@ nav.scrolled {
     margin-bottom: var(--space-sm);
 }
 
-.hero-name span {
-    color: var(--accent);
+.hero-name span,
+.hero-name-line1,
+.hero-name-line2 {
     display: block;
+}
+
+.hero-name-line2 {
+    color: var(--accent);
 }
 
 .hero-title {
@@ -1351,13 +1356,11 @@ footer {
         text-align: center;
     }
 
-    /* Hero name — scale down font to fit on one or two clean lines */
+    /* Hero name — 3 rows, each word fills its line */
     .hero-name {
-        font-size: clamp(40px, 10vw, 64px);
-        letter-spacing: -1px;
-        word-break: normal;
-        overflow-wrap: normal;
-        white-space: normal;
+        font-size: clamp(48px, 15vw, 80px);
+        letter-spacing: -2px;
+        line-height: 1.0;
     }
 
     /* Hide decoration that causes 600px overflow */
