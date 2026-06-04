@@ -1351,11 +1351,13 @@ footer {
         text-align: center;
     }
 
-    /* Hero name — tighten letter spacing to prevent overflow */
+    /* Hero name — scale down font to fit on one or two clean lines */
     .hero-name {
+        font-size: clamp(40px, 10vw, 64px);
         letter-spacing: -1px;
-        word-break: break-word;
-        overflow-wrap: break-word;
+        word-break: normal;
+        overflow-wrap: normal;
+        white-space: normal;
     }
 
     /* Hide decoration that causes 600px overflow */
@@ -1392,8 +1394,8 @@ footer {
    ============================================================ */
 @media (max-width: 400px) {
     .hero-name {
+        font-size: clamp(32px, 9vw, 48px);
         letter-spacing: -0.5px;
-        font-size: clamp(48px, 14vw, 72px);
     }
 
     .about-stats {
