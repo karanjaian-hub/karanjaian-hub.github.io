@@ -1356,11 +1356,11 @@ footer {
         text-align: center;
     }
 
-    /* Hero name — 3 rows, each word fills its line */
+    /* Hero name — 3 clean rows on mobile, no breaking */
     .hero-name {
-        font-size: clamp(48px, 15vw, 80px);
-        letter-spacing: -2px;
-        line-height: 1.0;
+        font-size: clamp(36px, 11vw, 56px);
+        letter-spacing: -1px;
+        line-height: 1.05;
     }
 
     /* Hide decoration that causes 600px overflow */
