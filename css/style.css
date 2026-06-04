@@ -568,6 +568,8 @@ nav.scrolled {
     background: radial-gradient(circle, rgba(204, 255, 0, 0.04) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
 .hero-scroll-hint {
@@ -936,12 +938,11 @@ nav.scrolled {
     height: 100%;
     min-height: 480px;
     background: #0a0a0a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Portrait screenshots — contained with padding, not cropped */
+/* Portrait screenshots — contained, not cropped */
 .project-card.featured .card-slideshow .slide-img {
     object-fit: contain;
     padding: var(--space-md);
@@ -1350,10 +1351,16 @@ footer {
         text-align: center;
     }
 
-    /* Hero name — tighten letter spacing on mobile */
+    /* Hero name — tighten letter spacing to prevent overflow */
     .hero-name {
         letter-spacing: -1px;
         word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Hide decoration that causes 600px overflow */
+    .hero-bg-decoration {
+        display: none;
     }
 
     /* Prevent any element from causing horizontal overflow */
