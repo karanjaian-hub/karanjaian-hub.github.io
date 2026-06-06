@@ -388,3 +388,15 @@
     transform: none !important;
   }
 }
+
+/* Force all children of animated elements visible on mobile */
+@media (max-width: 768px) {
+  [data-animate] *,
+  [data-animate="fade-left"] *,
+  [data-animate="fade-right"] *,
+  [data-animate="scale"] * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
