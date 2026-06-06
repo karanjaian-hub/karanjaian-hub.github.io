@@ -34,8 +34,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/animations.min.css">
 </head>
 <body>
 
@@ -297,7 +297,7 @@
                 Projects that<br><span class="accent-text">ship to production.</span>
             </h2>
 
-            <!-- Dynamically populated by js/projects.js -->
+            <!-- Dynamically populated by js/projects.min.js -->
             <div class="projects-grid" id="projects-grid" role="list" aria-label="Project cards">
             </div>
         </div>
@@ -449,8 +449,8 @@
 
 <!-- Scripts — loaded at bottom to avoid render blocking -->
 <script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-animate]").forEach(function(e){e.style.cssText="opacity:1!important;transform:none!important;transition:none!important;animation:none!important;"});});</script>
-<script src="js/projects.js"></script>
-<script src="js/main.js"></script>
+<script src="js/projects.min.js"></script>
+<script src="js/main.min.js"></script>
 
 </body>
 </html>
