@@ -10,19 +10,15 @@
    Adds .is-visible once element enters viewport — never removes.
    ============================================================ */
 function initScrollReveal() {
+  // Always add is-visible to all elements immediately on mobile
   document.querySelectorAll("[data-animate]").forEach(el => {
+    el.classList.add("is-visible");
     el.style.opacity = "1";
     el.style.transform = "none";
     el.style.transition = "none";
+    el.style.animation = "none";
   });
-  if (window.innerWidth <= 1024) {
-    document.querySelectorAll("[data-animate]").forEach(el => {
-      el.style.opacity = "1";
-      el.style.transform = "none";
-      el.style.transition = "none";
-    });
-    return;
-  }
+  if (window.innerWidth <= 1024) return;
     const animatedElements = document.querySelectorAll('[data-animate]');
     if (!animatedElements.length) return;
 
