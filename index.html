@@ -448,6 +448,7 @@
 </div>
 
 <!-- Scripts — loaded at bottom to avoid render blocking -->
+<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-animate]").forEach(function(e){e.style.cssText="opacity:1!important;transform:none!important;transition:none!important;animation:none!important;"});});</script>
 <script src="js/projects.js"></script>
 <script src="js/main.js"></script>
 
