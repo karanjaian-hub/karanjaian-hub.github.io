@@ -382,3 +382,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillTagsStagger();
     initProjectCardsStagger();
 });
+// Fallback — force all animated elements visible after 1 second
+setTimeout(function() {
+  document.querySelectorAll('[data-animate]').forEach(function(el) {
+    el.classList.add('is-visible');
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  });
+}, 1000);
