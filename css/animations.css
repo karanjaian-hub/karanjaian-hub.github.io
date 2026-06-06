@@ -8,25 +8,7 @@
    1. PAGE LOAD TRANSITION
    Wipes away on load revealing the site beneath
    ============================================================ */
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: var(--bg-base);
-    z-index: 9999;
-    animation: pageReveal 800ms ease forwards;
-    pointer-events: none;
-}
-
-@keyframes pageReveal {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        pointer-events: none;
-    }
-}
+/* Page reveal removed — caused animation issues on mobile */
 
 /* ============================================================
    2. CORE KEYFRAMES
@@ -124,30 +106,29 @@ body::before {
 
 /* ============================================================
    3. HERO ENTRANCE ANIMATIONS
-   Fires on page load — staggered sequence
    ============================================================ */
 #hero .hero-label {
-    animation: fadeInLeft 700ms 200ms both;
+    animation: fadeInLeft 700ms 200ms forwards;
 }
 
 #hero .hero-name {
-    animation: fadeInUp 800ms 400ms both;
+    animation: fadeInUp 800ms 300ms forwards;
 }
 
 #hero .hero-title {
-    animation: fadeInUp 700ms 600ms both;
+    animation: fadeInUp 700ms 400ms forwards;
 }
 
 #hero .hero-bio {
-    animation: fadeInUp 700ms 700ms both;
+    animation: fadeInUp 700ms 500ms forwards;
 }
 
 #hero .hero-cta {
-    animation: fadeInUp 700ms 800ms both;
+    animation: fadeInUp 700ms 600ms forwards;
 }
 
 #hero .hero-right {
-    animation: fadeInRight 800ms 500ms both;
+    animation: fadeInRight 800ms 400ms forwards;
 }
 
 /* ============================================================
@@ -347,32 +328,41 @@ body::before {
 
 /* ============================================================
    17. REDUCED MOTION SUPPORT
-   Respects user's OS-level preference
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
 
-    [data-animate] {
-        opacity: 1;
-        transform: none;
-        transition: none;
+    [data-animate] { opacity: 1; transform: none; transition: none; }
+    .hero-photo-ring { animation: none; }
+    .badge-dot { animation: none; }
+    .hero-scroll-hint { animation: none; }
+}
+
+/* ============================================================
+   18. MOBILE — Disable animations, show everything immediately
+   ============================================================ */
+@media (max-width: 768px) {
+    [data-animate],
+    [data-animate="fade-left"],
+    [data-animate="fade-right"],
+    [data-animate="scale"] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 
-    .hero-photo-ring {
-        animation: none;
-    }
-
-    .badge-dot {
-        animation: none;
-    }
-
-    .hero-scroll-hint {
-        animation: none;
+    #hero .hero-label,
+    #hero .hero-name,
+    #hero .hero-title,
+    #hero .hero-bio,
+    #hero .hero-cta,
+    #hero .hero-right {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
