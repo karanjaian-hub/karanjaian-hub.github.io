@@ -366,3 +366,25 @@
         transform: none !important;
     }
 }
+/* MOBILE — Show all content immediately */
+@media (max-width: 768px) {
+  [data-animate],
+  [data-animate="fade-left"],
+  [data-animate="fade-right"],
+  [data-animate="scale"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #hero .hero-label,
+  #hero .hero-name,
+  #hero .hero-title,
+  #hero .hero-bio,
+  #hero .hero-cta,
+  #hero .hero-right {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
