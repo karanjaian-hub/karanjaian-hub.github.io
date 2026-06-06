@@ -10,30 +10,28 @@
    Adds .is-visible once element enters viewport — never removes.
    ============================================================ */
 function initScrollReveal() {
-  // Always add is-visible to all elements immediately on mobile
-  document.querySelectorAll("[data-animate]").forEach(el => {
-    el.classList.add("is-visible");
-    el.style.opacity = "1";
-    el.style.transform = "none";
-    el.style.transition = "none";
-    el.style.animation = "none";
-  });
-  if (window.innerWidth <= 1024) return;
     const animatedElements = document.querySelectorAll('[data-animate]');
     if (!animatedElements.length) return;
+
+    const isMobile = window.innerWidth <= 768;
+
+    // On mobile, skip animations entirely — just show everything
+    if (isMobile) {
+        animatedElements.forEach(el => el.classList.add('is-visible'));
+        return;
+    }
 
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    // Once revealed, stop watching this element
                     observer.unobserve(entry.target);
                 }
             });
         },
         {
-            threshold: 0.12,
+            threshold: 0.01,
             rootMargin: '0px 0px -60px 0px'
         }
     );
@@ -354,7 +352,6 @@ function initProjectCardsStagger() {
 
 /* ============================================================
    11. PERFORMANCE: THROTTLE SCROLL HANDLER
-   Utility to limit how often scroll callbacks fire.
    ============================================================ */
 function throttle(fn, wait) {
     let lastTime = 0;
@@ -368,7 +365,115 @@ function throttle(fn, wait) {
 }
 
 /* ============================================================
-   12. INIT EVERYTHING ON DOM READY
+   12. CUSTOM CURSOR — Desktop only
+   ============================================================ */
+function initCustomCursor() {
+    if (window.innerWidth <= 768) return;
+
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    const cursorDot = document.createElement('div');
+    cursorDot.className = 'custom-cursor-dot';
+    document.body.appendChild(cursor);
+    document.body.appendChild(cursorDot);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+    });
+
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.12;
+        cursorY += (mouseY - cursorY) * 0.12;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Grow cursor on hoverable elements
+    const hoverables = document.querySelectorAll('a, button, .project-card, .tag, .btn');
+    hoverables.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    });
+}
+
+/* ============================================================
+   13. SCROLL PROGRESS BAR
+   ============================================================ */
+function initScrollProgress() {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    document.body.appendChild(bar);
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        bar.style.width = progress + '%';
+    }, { passive: true });
+}
+
+/* ============================================================
+   14. CARD TILT EFFECT — Desktop only
+   ============================================================ */
+function initCardTilt() {
+    if (window.innerWidth <= 768) return;
+
+    const cards = document.querySelectorAll('.project-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / centerY * -5;
+            const rotateY = (x - centerX) / centerX * 5;
+            card.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            card.style.transition = 'transform 0.1s ease';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+            card.style.transition = 'transform 0.4s ease';
+        });
+    });
+}
+
+/* ============================================================
+   15. TYPEWRITER EFFECT — Hero title
+   ============================================================ */
+function initTypewriter() {
+    const el = document.querySelector('.hero-title');
+    if (!el) return;
+
+    const text = 'Building for the African market';
+    el.innerHTML = '<span class="typewriter-text"></span>';
+    const span = el.querySelector('.typewriter-text');
+
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            span.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 60);
+        }
+    }
+
+    // Start after hero animations complete
+    setTimeout(type, 1000);
+}
+
+/* ============================================================
+   16. INIT EVERYTHING ON DOM READY
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
@@ -381,12 +486,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
     initSkillTagsStagger();
     initProjectCardsStagger();
+    initCustomCursor();
+    initScrollProgress();
+    initTypewriter();
 });
-// Fallback — force all animated elements visible after 1 second
-setTimeout(function() {
-  document.querySelectorAll('[data-animate]').forEach(function(el) {
-    el.classList.add('is-visible');
-    el.style.opacity = '1';
-    el.style.transform = 'none';
-  });
-}, 1000);
+
+// Card tilt needs to run after projects are rendered
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initCardTilt, 500);
+});
