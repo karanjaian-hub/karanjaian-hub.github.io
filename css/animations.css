@@ -1,188 +1,78 @@
-/* ============================================================
-   Ian Karanja Murimi — Portfolio
-   css/animations.css — Keyframes + Scroll Reveal System
-   "African Precision" — Electric Lime on Near-Black
-   ============================================================ */
-
-/* ============================================================
-   1. PAGE LOAD TRANSITION
-   Wipes away on load revealing the site beneath
-   ============================================================ */
-/* Page reveal removed — caused animation issues on mobile */
-
-/* ============================================================
-   2. CORE KEYFRAMES
-   ============================================================ */
-
-/* Fade up from below */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-/* Fade in from left */
 @keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
-
-/* Fade in from right */
 @keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
-
-/* Scale in from slightly smaller */
 @keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.92);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
 }
-
-/* Rotating ring on hero photo — slow, 8s linear infinite */
 @keyframes rotateRing {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
-
-/* Pulsing green dot on available badge */
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.4);
-        opacity: 0.6;
-    }
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
 }
-
-/* Scroll hint bounce — preserves translateX(-50%) centering */
 @keyframes bounceY {
-    0%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(8px);
-    }
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
 }
-
-/* Glow pulse on primary button hover */
 @keyframes glowPulse {
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
-    }
-    50% {
-        box-shadow: 0 0 40px rgba(204, 255, 0, 0.4);
-    }
+  0%, 100% { box-shadow: 0 0 20px rgba(204, 255, 0, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(204, 255, 0, 0.4); }
 }
 
-/* ============================================================
-   3. HERO ENTRANCE ANIMATIONS
-   ============================================================ */
-#hero .hero-label {
-    animation: fadeInLeft 700ms 200ms forwards;
+/* Desktop only — hero animations */
+@media (min-width: 769px) {
+  #hero .hero-label { animation: fadeInLeft 700ms 200ms both; }
+  #hero .hero-name { animation: fadeInUp 800ms 300ms both; }
+  #hero .hero-title { animation: fadeInUp 700ms 400ms both; }
+  #hero .hero-bio { animation: fadeInUp 700ms 500ms both; }
+  #hero .hero-cta { animation: fadeInUp 700ms 600ms both; }
+  #hero .hero-right { animation: fadeInRight 800ms 400ms both; }
 }
 
-#hero .hero-name {
-    animation: fadeInUp 800ms 300ms forwards;
-}
-
-#hero .hero-title {
-    animation: fadeInUp 700ms 400ms forwards;
-}
-
-#hero .hero-bio {
-    animation: fadeInUp 700ms 500ms forwards;
-}
-
-#hero .hero-cta {
-    animation: fadeInUp 700ms 600ms forwards;
-}
-
-#hero .hero-right {
-    animation: fadeInRight 800ms 400ms forwards;
-}
-
-/* ============================================================
-   4. SCROLL REVEAL SYSTEM
-   Elements with [data-animate] start hidden.
-   IntersectionObserver in main.js adds .is-visible.
-   ============================================================ */
-
-/* Default — fade up */
-[data-animate] {
+/* Desktop only — scroll reveal */
+@media (min-width: 769px) {
+  [data-animate] {
     opacity: 0;
     transform: translateY(40px);
-    transition:
-            opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-            transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* Fade from left */
-[data-animate="fade-left"] {
+    transition: opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  [data-animate="fade-left"] {
     opacity: 0;
     transform: translateX(-40px);
-    transition:
-            opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-            transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* Fade from right */
-[data-animate="fade-right"] {
+    transition: opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  [data-animate="fade-right"] {
     opacity: 0;
     transform: translateX(40px);
-    transition:
-            opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-            transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* Scale in */
-[data-animate="scale"] {
+    transition: opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  [data-animate="scale"] {
     opacity: 0;
     transform: scale(0.92);
-    transition:
-            opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-            transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* Visible state — applies to all variants */
-[data-animate].is-visible {
+    transition: opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  [data-animate].is-visible {
     opacity: 1;
     transform: translateY(0) translateX(0) scale(1);
+  }
 }
 
-/* ============================================================
-   5. STAGGER DELAY CLASSES
-   Apply to siblings for cascaded reveal effect
-   ============================================================ */
 .stagger-1 { transition-delay: 100ms; }
 .stagger-2 { transition-delay: 200ms; }
 .stagger-3 { transition-delay: 300ms; }
@@ -190,229 +80,18 @@
 .stagger-5 { transition-delay: 500ms; }
 .stagger-6 { transition-delay: 600ms; }
 
-/* ============================================================
-   6. PROJECT CARD HOVER TRANSITIONS
-   ============================================================ */
 .project-card {
-    transition:
-            transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-            border-color 400ms ease,
-            box-shadow 400ms ease;
+  transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 400ms ease, box-shadow 400ms ease;
 }
 
-/* ============================================================
-   7. BUTTON GLOW — primary button hover
-   ============================================================ */
-.btn-primary:hover {
-    animation: glowPulse 1.5s ease-in-out infinite;
-}
+.footer-back-top { opacity: 0; transition: opacity 400ms ease; }
+.footer-back-top.visible { opacity: 1; display: inline-flex; }
 
-/* ============================================================
-   8. TAG STAGGER — skills section
-   Tags animate in with JS-applied inline transition-delay
-   Base transition defined here
-   ============================================================ */
-.tag {
-    transition:
-            border-color var(--transition-fast),
-            color var(--transition-fast),
-            opacity 500ms ease,
-            transform 500ms ease;
-}
-
-.tag.tag-hidden {
-    opacity: 0;
-    transform: translateY(10px);
-}
-
-.tag.tag-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ============================================================
-   9. STAT CARD COUNT-UP SUPPORT
-   Smooth number transition via CSS
-   ============================================================ */
-.stat-number {
-    transition: color var(--transition-base);
-}
-
-/* ============================================================
-   10. BACK TO TOP — fade in/out
-   ============================================================ */
-.footer-back-top {
-    opacity: 0;
-    transition: opacity var(--transition-base);
-}
-
-.footer-back-top.visible {
-    opacity: 1;
-    display: inline-flex;
-}
-
-/* ============================================================
-   11. MOBILE MENU — link entrance on open
-   ============================================================ */
-.mobile-menu.open ul li {
-    animation: fadeInUp 400ms both;
-}
-
-.mobile-menu.open ul li:nth-child(1) { animation-delay: 100ms; }
-.mobile-menu.open ul li:nth-child(2) { animation-delay: 200ms; }
-.mobile-menu.open ul li:nth-child(3) { animation-delay: 300ms; }
-.mobile-menu.open ul li:nth-child(4) { animation-delay: 400ms; }
-
-/* ============================================================
-   12. SLIDESHOW IMAGE CROSSFADE
-   Handled in style.css (.slide-img transition)
-   Enhanced here for the active state entrance
-   ============================================================ */
-.slide-img.active {
-    animation: none; /* crossfade via opacity transition is enough */
-}
-
-/* ============================================================
-   13. AVAILABLE BADGE — subtle entrance delay
-   ============================================================ */
-.hero-available-badge {
-    animation: fadeInUp 600ms 1000ms both;
-}
-
-/* ============================================================
-   14. SCROLL HINT — delayed entrance
-   ============================================================ */
-.hero-scroll-hint {
-    animation: bounceY 2s ease-in-out infinite, fadeInUp 600ms 1200ms both;
-}
-
-/* ============================================================
-   15. FEATURED BADGE SHIMMER
-   Subtle left-to-right highlight sweep
-   ============================================================ */
-@keyframes shimmer {
-    0% {
-        background-position: -200% center;
-    }
-    100% {
-        background-position: 200% center;
-    }
-}
-
-.featured-badge {
-    background-size: 200% auto;
-    transition: background var(--transition-base);
-}
-
-.featured-badge:hover {
-    background: linear-gradient(
-            90deg,
-            var(--accent-dim) 0%,
-            rgba(204, 255, 0, 0.15) 50%,
-            var(--accent-dim) 100%
-    );
-    background-size: 200% auto;
-    animation: shimmer 1.5s linear infinite;
-}
-
-/* ============================================================
-   16. MODAL ENTRANCE
-   ============================================================ */
-.modal-container {
-    transition: transform var(--transition-base);
-}
-
-.modal-overlay.is-open .modal-container {
-    animation: scaleIn 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-/* ============================================================
-   17. REDUCED MOTION SUPPORT
-   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-
-    [data-animate] { opacity: 1; transform: none; transition: none; }
-    .hero-photo-ring { animation: none; }
-    .badge-dot { animation: none; }
-    .hero-scroll-hint { animation: none; }
-}
-
-/* ============================================================
-   18. MOBILE — Disable animations, show everything immediately
-   ============================================================ */
-@media (max-width: 768px) {
-    [data-animate],
-    [data-animate="fade-left"],
-    [data-animate="fade-right"],
-    [data-animate="scale"] {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-    }
-
-    #hero .hero-label,
-    #hero .hero-name,
-    #hero .hero-title,
-    #hero .hero-bio,
-    #hero .hero-cta,
-    #hero .hero-right {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-    }
-}
-/* MOBILE — Show all content immediately */
-@media (max-width: 768px) {
-  [data-animate],
-  [data-animate="fade-left"],
-  [data-animate="fade-right"],
-  [data-animate="scale"] {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
-  #hero .hero-label,
-  #hero .hero-name,
-  #hero .hero-title,
-  #hero .hero-bio,
-  #hero .hero-cta,
-  #hero .hero-right {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-
-/* Force all children of animated elements visible on mobile */
-@media (max-width: 768px) {
-  [data-animate] *,
-  [data-animate="fade-left"] *,
-  [data-animate="fade-right"] *,
-  [data-animate="scale"] * {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
-/* FINAL FIX — force everything visible on mobile */
-@media (max-width: 768px) {
-  *[data-animate] {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation: none !important;
-  }
-  *[data-animate] * {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation: none !important;
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
