@@ -10,7 +10,7 @@
    Adds .is-visible once element enters viewport — never removes.
    ============================================================ */
 function initScrollReveal() {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1024) {
     document.querySelectorAll("[data-animate]").forEach(el => {
       el.style.opacity = "1";
       el.style.transform = "none";
