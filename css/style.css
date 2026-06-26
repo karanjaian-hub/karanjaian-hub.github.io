@@ -249,7 +249,7 @@ button { font-family: inherit; }
 #hero {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
-  position: relative; overflow: hidden;
+  position: relative; overflow-y: hidden; overflow-x: clip;
   padding: 100px 0 60px;
 }
 
