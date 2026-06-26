@@ -95,7 +95,7 @@ function buildFeatured(p) {
   return `
   <article class="project-card featured s1" data-animate data-id="${p.id}">
     <div class="feat-inner">
-      <div class="slideshow" data-ss data-i="${p.name.charAt(0)}">
+      <div class="slideshow" data-ss data-i="${p.name.charAt(0)}" style="min-height:320px;">
         ${slides(p.images, p.name)}
         <div class="dots">${dotsBtns(p.images)}</div>
         <button class="arrow l">‹</button>
