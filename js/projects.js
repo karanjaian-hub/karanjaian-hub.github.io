@@ -5,129 +5,129 @@
    ============================================================ */
 
 /* ============================================================
-   1. PROJECT DATA
-   Replace github: "#" with real repo URLs
-   Replace demo: "#" with YouTube embed URLs
-   Format: https://www.youtube.com/embed/VIDEO_ID?rel=0
+   1. PROJECT DATA — V3
+   RentiFi replaced with RentFlow Kenya
+   All GitHub repos linked
    ============================================================ */
 const projects = [
-    {
-        id: 'akiba',
-        name: 'Akiba',
-        tagline: 'Every shilling has a story.',
-        description: 'A smart personal finance app for Kenya that automatically imports and categorizes M-Pesa transactions, tracks budgets, and delivers AI-powered financial insights — built on a production-grade microservices backend.',
-        category: 'Mobile · Full-Stack',
-        tags: ['Kotlin', 'Jetpack Compose', 'Vert.x 5', 'Java 21', 'RabbitMQ', 'Redis', 'PostgreSQL', 'Groq AI', 'M-Pesa Daraja', 'Docker', 'Microservices'],
-        images: [
-            'assets/images/akiba-1.jpg',
-            'assets/images/akiba-2.jpg',
-            'assets/images/akiba-3.jpg',
-            'assets/images/akiba-4.jpg',
-            'assets/images/akiba-5.jpg',
-            'assets/images/akiba-6.jpg',
-            'assets/images/akiba-7.jpg',
-            'assets/images/akiba-8.jpg',
-            'assets/images/akiba-9.jpg',
-            'assets/images/akiba-10.jpg',
-            'assets/images/akiba-11.jpg',
-            'assets/images/akiba-12.jpg',
-            'assets/images/akiba-13.jpg',
-            'assets/images/akiba-14.jpg',
-            'assets/images/akiba-15.jpg',
-            'assets/images/akiba-16.jpg'
-        ],
-        github: '#',
-        demo: 'https://www.youtube.com/embed/nkgpPm89e0M',
-        featured: true
-    },
-    {
-        id: 'careconnect',
-        name: 'CareConnect',
-        tagline: 'Referrals that reach the right doctor, fast.',
-        description: 'A digital platform that streamlines patient referrals between healthcare facilities, replacing paperwork and phone calls with a fast, trackable, HL7 FHIR-compliant system.',
-        category: 'Full-Stack · Healthtech',
-        tags: ['Java 21', 'Spring Boot 3', 'React 18', 'PostgreSQL', 'Redis', 'TailwindCSS', 'Docker', 'HL7 FHIR', 'GitHub Actions'],
-        images: [
-            'assets/images/careconnect-1.jpg',
-            'assets/images/careconnect-2.jpg',
-            'assets/images/careconnect-3.jpg',
-            'assets/images/careconnect-4.jpg',
-            'assets/images/careconnect-5.jpg',
-            'assets/images/careconnect-6.jpg',
-            'assets/images/careconnect-7.jpg',
-            'assets/images/careconnect-8.jpg',
-            'assets/images/careconnect-9.jpg',
-            'assets/images/careconnect-10.jpg',
-            'assets/images/careconnect-11.jpg',
-            'assets/images/careconnect-12.jpg',
-            'assets/images/careconnect-13.jpg',
-            'assets/images/careconnect-14.jpg',
-            'assets/images/careconnect-15.jpg',
-            'assets/images/careconnect-16.jpg',
-            'assets/images/careconnect-17.jpg'
-        ],
-        github: '#',
-        demo: 'https://www.youtube.com/embed/EXlZQh4EQfk',
-        featured: false
-    },
-    {
-        id: 'eventflow',
-        name: 'EventFlow',
-        tagline: 'Half a million invitations. Zero missed RSVPs.',
-        description: 'A scalable event management platform that handles mass guest invitations and tracks RSVPs in real time — powered by Kafka, WebSockets, and Redis distributed locks.',
-        category: 'Full-Stack · Systems',
-        tags: ['Java 17', 'Spring Boot', 'Apache Kafka', 'WebSocket', 'React 18', 'Redis', 'PostgreSQL', 'Docker'],
-        images: [
-            'assets/images/eventflow-1.jpg',
-            'assets/images/eventflow-2.jpg',
-            'assets/images/eventflow-3.jpg',
-            'assets/images/eventflow-4.jpg',
-            'assets/images/eventflow-5.jpg',
-            'assets/images/eventflow-6.jpg',
-            'assets/images/eventflow-7.jpg',
-            'assets/images/eventflow-8.jpg'
-        ],
-        github: '#',
-        demo: 'https://www.youtube.com/embed/y_LIegszRIw',
-        featured: false
-    },
-    {
-        id: 'noteflow',
-        name: 'NoteFlow',
-        tagline: 'Every keystroke, safely stored.',
-        description: 'A cloud-native note-taking web app with rich text editing, auto-save, tags, folders, and search — built on a reactive microservices backend with a persistent save queue and zero data loss.',
-        category: 'Full-Stack · Backend',
-        tags: ['Java 21', 'Vert.x 5', 'Redis', 'PostgreSQL', 'Vanilla JS', 'Docker', 'Railway', 'Microservices'],
-        images: [
-            'assets/images/noteflow-1.jpg',
-            'assets/images/noteflow-2.jpg',
-            'assets/images/noteflow-3.jpg'
-        ],
-        github: '#',
-        demo: 'https://www.youtube.com/embed/hlrW0PpHrvo',
-        featured: false
-    },
-    {
-        id: 'rentifi',
-        name: 'RentiFi',
-        tagline: 'Pay rent. Get internet. Automatically.',
-        description: 'A SaaS platform that automates internet billing and network access control for residential properties — powered by M-Pesa, with subdomain-based multi-tenancy for property managers.',
-        category: 'Full-Stack · SaaS',
-        tags: ['Java 17', 'Spring Boot', 'React 18', 'PostgreSQL', 'M-Pesa Daraja', 'TailwindCSS', 'Nginx', 'Docker', 'VPS'],
-        images: [
-            'assets/images/rentifi-1.jpg',
-            'assets/images/rentifi-2.jpg',
-            'assets/images/rentifi-3.jpg'
-        ],
-        github: '#', // PLACEHOLDER: replace with https://github.com/karanjaian-hub/rentifi
-        demo: '#',   // PLACEHOLDER: replace with https://www.youtube.com/embed/VIDEO_ID?rel=0
-        featured: false
-    }
+  {
+    id: 'akiba',
+    name: 'Akiba',
+    tagline: 'Every shilling has a story.',
+    description: 'A smart personal finance app for Kenya that automatically imports and categorizes M-Pesa transactions, tracks budgets, and delivers AI-powered financial insights — built on a production-grade microservices backend.',
+    category: 'Mobile · Full-Stack',
+    tags: ['Kotlin', 'Jetpack Compose', 'Vert.x 5', 'Java 21', 'RabbitMQ', 'Redis', 'PostgreSQL', 'Groq AI', 'M-Pesa Daraja', 'Docker', 'Microservices'],
+    images: [
+      'assets/images/akiba-1.jpg',
+      'assets/images/akiba-2.jpg',
+      'assets/images/akiba-3.jpg',
+      'assets/images/akiba-4.jpg',
+      'assets/images/akiba-5.jpg',
+      'assets/images/akiba-6.jpg',
+      'assets/images/akiba-7.jpg',
+      'assets/images/akiba-8.jpg',
+      'assets/images/akiba-9.jpg',
+      'assets/images/akiba-10.jpg',
+      'assets/images/akiba-11.jpg',
+      'assets/images/akiba-12.jpg',
+      'assets/images/akiba-13.jpg',
+      'assets/images/akiba-14.jpg',
+      'assets/images/akiba-15.jpg',
+      'assets/images/akiba-16.jpg'
+    ],
+    github: 'https://github.com/karanjaian-hub/akiba',
+    demo: 'https://www.youtube.com/embed/nkgpPm89e0M',
+    featured: true
+  },
+  {
+    id: 'careconnect',
+    name: 'CareConnect',
+    tagline: 'Referrals that reach the right doctor, fast.',
+    description: 'A digital platform that streamlines patient referrals between healthcare facilities, replacing paperwork and phone calls with a fast, trackable, HL7 FHIR-compliant system.',
+    category: 'Full-Stack · Healthtech',
+    tags: ['Java 21', 'Spring Boot 3', 'React 18', 'PostgreSQL', 'Redis', 'TailwindCSS', 'Docker', 'HL7 FHIR', 'GitHub Actions'],
+    images: [
+      'assets/images/careconnect-1.jpg',
+      'assets/images/careconnect-2.jpg',
+      'assets/images/careconnect-3.jpg',
+      'assets/images/careconnect-4.jpg',
+      'assets/images/careconnect-5.jpg',
+      'assets/images/careconnect-6.jpg',
+      'assets/images/careconnect-7.jpg',
+      'assets/images/careconnect-8.jpg',
+      'assets/images/careconnect-9.jpg',
+      'assets/images/careconnect-10.jpg',
+      'assets/images/careconnect-11.jpg',
+      'assets/images/careconnect-12.jpg',
+      'assets/images/careconnect-13.jpg',
+      'assets/images/careconnect-14.jpg',
+      'assets/images/careconnect-15.jpg',
+      'assets/images/careconnect-16.jpg',
+      'assets/images/careconnect-17.jpg'
+    ],
+    github: 'https://github.com/karanjaian-hub/careconnect',
+    demo: '#',
+    featured: false
+  },
+  {
+    id: 'eventflow',
+    name: 'EventFlow',
+    tagline: 'Half a million invitations. Zero missed RSVPs.',
+    description: 'A scalable event management platform that handles mass guest invitations and tracks RSVPs in real time — powered by Kafka, WebSockets, and Redis distributed locks.',
+    category: 'Full-Stack · Systems',
+    tags: ['Java 17', 'Spring Boot', 'Apache Kafka', 'WebSocket', 'React 18', 'Redis', 'PostgreSQL', 'Docker'],
+    images: [
+      'assets/images/eventflow-1.jpg',
+      'assets/images/eventflow-2.jpg',
+      'assets/images/eventflow-3.jpg',
+      'assets/images/eventflow-4.jpg',
+      'assets/images/eventflow-5.jpg',
+      'assets/images/eventflow-6.jpg',
+      'assets/images/eventflow-7.jpg',
+      'assets/images/eventflow-8.jpg'
+    ],
+    github: 'https://github.com/karanjaian-hub/eventflow',
+    demo: 'https://www.youtube.com/embed/y_LIegszRIw',
+    featured: false
+  },
+  {
+    id: 'noteflow',
+    name: 'NoteFlow',
+    tagline: 'Every keystroke, safely stored.',
+    description: 'A cloud-native note-taking web app with rich text editing, auto-save, tags, folders, and search — built on a reactive microservices backend with a persistent save queue and zero data loss.',
+    category: 'Full-Stack · Backend',
+    tags: ['Java 21', 'Vert.x 5', 'Redis', 'PostgreSQL', 'Vanilla JS', 'Docker', 'Railway', 'Microservices'],
+    images: [
+      'assets/images/noteflow-1.jpg',
+      'assets/images/noteflow-2.jpg',
+      'assets/images/noteflow-3.jpg',
+      'assets/images/noteflow-4.jpg',
+      'assets/images/noteflow-5.jpg'
+    ],
+    github: 'https://github.com/karanjaian-hub/noteflow',
+    demo: 'https://www.youtube.com/embed/hlrW0PpHrvo',
+    featured: false
+  },
+  {
+    id: 'rentflow',
+    name: 'RentFlow Kenya',
+    tagline: 'Pay rent. Get a receipt. Automatically.',
+    description: 'A comprehensive SaaS platform that automates rent collection, utility billing, and property management for Kenyan landlords — powered by M-Pesa, with WhatsApp-integrated communication and automated landlord payouts.',
+    category: 'Full-Stack · SaaS',
+    tags: ['Java 21', 'Spring Boot 3', 'React 18', 'TypeScript', 'PostgreSQL', 'Redis', 'M-Pesa Daraja', 'WhatsApp Business API', 'AWS', 'Docker'],
+    images: [
+      'assets/images/rentflow-1.jpg',
+      'assets/images/rentflow-2.jpg',
+      'assets/images/rentflow-3.jpg'
+    ],
+    github: 'https://github.com/karanjaian-hub/rentflow-kenya',
+    demo: '#',
+    featured: false
+  }
 ];
 
 /* ============================================================
    2. GITHUB SVG ICON
-   Reusable inline SVG for card actions
    ============================================================ */
 const githubIcon = `
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -137,62 +137,36 @@ const githubIcon = `
 
 /* ============================================================
    3. BUILD STANDARD CARD
-   Used for: CareConnect, EventFlow, NoteFlow, RentiFi
    ============================================================ */
 function buildStandardCard(project) {
-    const initial = project.name.charAt(0);
+  const initial = project.name.charAt(0);
 
-    const imagesHTML = project.images.map((img, i) => `
-    <img
-      src="${img}"
-      alt="${project.name} — screenshot ${i + 1}"
+  const imagesHTML = project.images.map((img, i) => `
+    <img src="${img}" alt="${project.name} screenshot ${i + 1}"
       class="slide-img${i === 0 ? ' active' : ''}"
-      loading="lazy"
-      width="1280"
-      height="720"
-      onerror="this.style.display='none'"
-    >
+      loading="lazy" width="1280" height="720"
+      onerror="this.style.display='none'">
   `).join('');
 
-    const dotsHTML = project.images.map((_, i) => `
-    <button
-      class="slide-dot${i === 0 ? ' active' : ''}"
-      data-index="${i}"
-      aria-label="Go to slide ${i + 1}"
-    ></button>
+  const dotsHTML = project.images.map((_, i) => `
+    <button class="slide-dot${i === 0 ? ' active' : ''}"
+      data-index="${i}" aria-label="Go to slide ${i + 1}"></button>
   `).join('');
 
-    const tagsHTML = project.tags.map(tag =>
-        `<span class="tag">${tag}</span>`
-    ).join('');
+  const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
-    const demoButton = project.demo !== '#'
-        ? `<button
-         class="btn btn-outline btn-demo"
-         data-demo="${project.demo}"
-         data-title="${project.name}"
-         aria-label="Watch ${project.name} demo video"
-       >▶ Watch Demo</button>`
-        : `<button
-         class="btn btn-outline"
-         disabled
-         title="Demo coming soon"
-         aria-label="${project.name} demo coming soon"
-       >▶ Demo Soon</button>`;
+  const demoButton = project.demo !== '#'
+    ? `<button class="btn btn-outline btn-demo"
+         data-demo="${project.demo}" data-title="${project.name}"
+         aria-label="Watch ${project.name} demo">▶ Watch Demo</button>`
+    : `<button class="btn btn-outline" disabled title="Demo coming soon"
+         aria-label="${project.name} demo coming soon">▶ Demo Soon</button>`;
 
-    return `
-    <article
-      class="project-card"
-      data-id="${project.id}"
-      data-animate
-      role="listitem"
-      aria-label="${project.name} project"
-    >
+  return `
+    <article class="project-card" data-id="${project.id}" data-animate role="listitem">
       <div class="card-slideshow" data-slideshow data-initial="${initial}">
         ${imagesHTML}
-        <div class="slide-dots" role="tablist" aria-label="${project.name} screenshots">
-          ${dotsHTML}
-        </div>
+        <div class="slide-dots">${dotsHTML}</div>
         <button class="slide-arrow prev" aria-label="Previous screenshot">‹</button>
         <button class="slide-arrow next" aria-label="Next screenshot">›</button>
       </div>
@@ -200,17 +174,11 @@ function buildStandardCard(project) {
         <p class="card-category">${project.category}</p>
         <h3 class="card-title">${project.name}</h3>
         <p class="card-tagline">${project.tagline}</p>
-        <div class="card-tags" aria-label="${project.name} technologies used">
-          ${tagsHTML}
-        </div>
+        <div class="card-tags">${tagsHTML}</div>
         <div class="card-actions">
-          <a
-            href="${project.github}"
-            class="btn-icon"
+          <a href="${project.github}" class="btn-icon"
             aria-label="View ${project.name} on GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >${githubIcon}</a>
+            target="_blank" rel="noopener noreferrer">${githubIcon}</a>
           ${demoButton}
         </div>
       </div>
@@ -219,90 +187,54 @@ function buildStandardCard(project) {
 }
 
 /* ============================================================
-   4. BUILD FEATURED CARD
-   Used for: Akiba (spans full grid width)
+   4. BUILD FEATURED CARD (AKIBA)
    ============================================================ */
 function buildFeaturedCard(project) {
-    const initial = project.name.charAt(0);
+  const initial = project.name.charAt(0);
 
-    const imagesHTML = project.images.map((img, i) => `
-    <img
-      src="${img}"
-      alt="${project.name} — screenshot ${i + 1}"
+  const imagesHTML = project.images.map((img, i) => `
+    <img src="${img}" alt="${project.name} screenshot ${i + 1}"
       class="slide-img${i === 0 ? ' active' : ''}"
-      loading="lazy"
-      width="1280"
-      height="720"
-      onerror="this.style.display='none'"
-    >
+      loading="lazy" width="1080" height="1920"
+      onerror="this.style.display='none'">
   `).join('');
 
-    const dotsHTML = project.images.map((_, i) => `
-    <button
-      class="slide-dot${i === 0 ? ' active' : ''}"
-      data-index="${i}"
-      aria-label="Go to slide ${i + 1}"
-    ></button>
+  const dotsHTML = project.images.map((_, i) => `
+    <button class="slide-dot${i === 0 ? ' active' : ''}"
+      data-index="${i}" aria-label="Go to slide ${i + 1}"></button>
   `).join('');
 
-    const tagsHTML = project.tags.map(tag =>
-        `<span class="tag">${tag}</span>`
-    ).join('');
+  const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
-    const demoButton = project.demo !== '#'
-        ? `<button
-         class="btn btn-outline btn-demo"
-         data-demo="${project.demo}"
-         data-title="${project.name}"
-         aria-label="Watch ${project.name} demo video"
-       >▶ Watch Demo</button>`
-        : `<button
-         class="btn btn-outline"
-         disabled
-         title="Demo coming soon"
-         aria-label="${project.name} demo coming soon"
-       >▶ Demo Soon</button>`;
+  const demoButton = project.demo !== '#'
+    ? `<button class="btn btn-outline btn-demo"
+         data-demo="${project.demo}" data-title="${project.name}"
+         aria-label="Watch ${project.name} demo">▶ Watch Demo</button>`
+    : `<button class="btn btn-outline" disabled title="Demo coming soon">▶ Demo Soon</button>`;
 
-    return `
-    <article
-      class="project-card featured"
-      data-id="${project.id}"
-      data-animate
-      role="listitem"
-      aria-label="${project.name} — featured project"
-    >
+  return `
+    <article class="project-card featured" data-id="${project.id}" data-animate role="listitem">
       <div class="card-inner">
-
         <div class="card-slideshow" data-slideshow data-initial="${initial}">
           ${imagesHTML}
-          <div class="slide-dots" role="tablist" aria-label="${project.name} screenshots">
-            ${dotsHTML}
-          </div>
+          <div class="slide-dots">${dotsHTML}</div>
           <button class="slide-arrow prev" aria-label="Previous screenshot">‹</button>
           <button class="slide-arrow next" aria-label="Next screenshot">›</button>
         </div>
-
         <div class="card-body">
-          <div class="featured-badge" aria-label="Featured project">★ Featured Project</div>
+          <div class="featured-badge">★ Featured Project</div>
           <p class="card-category">${project.category}</p>
           <h3 class="card-title">${project.name}</h3>
           <p class="card-tagline">${project.tagline}</p>
           <p class="card-description">${project.description}</p>
-          <div class="card-tags" aria-label="${project.name} technologies used">
-            ${tagsHTML}
-          </div>
+          <div class="card-tags">${tagsHTML}</div>
           <div class="card-actions">
-            <a
-              href="${project.github}"
-              class="btn-icon"
+            <a href="${project.github}" class="btn-icon"
               aria-label="View ${project.name} on GitHub"
-              target="_blank"
-              rel="noopener noreferrer"
-            >${githubIcon}</a>
+              target="_blank" rel="noopener noreferrer">${githubIcon}</a>
             ${demoButton}
           </div>
         </div>
-
       </div>
     </article>
   `;
@@ -310,218 +242,125 @@ function buildFeaturedCard(project) {
 
 /* ============================================================
    5. RENDER ALL PROJECTS
-   Injects cards into #projects-grid
-   Applies stagger delay classes after render
    ============================================================ */
 function renderProjects() {
-    const grid = document.getElementById('projects-grid');
-    if (!grid) return;
+  const grid = document.getElementById('projects-grid');
+  if (!grid) return;
 
-    // Build HTML for all cards
-    const html = projects.map(project => {
-        return project.featured
-            ? buildFeaturedCard(project)
-            : buildStandardCard(project);
-    }).join('');
+  grid.innerHTML = projects.map(p => p.featured ? buildFeaturedCard(p) : buildStandardCard(p)).join('');
 
-    grid.innerHTML = html;
+  const cards = grid.querySelectorAll('.project-card');
+  cards.forEach((card, i) => {
+    if (i < 6) card.classList.add(`stagger-${i + 1}`);
+  });
 
-    // Apply stagger delay classes to each card
-    const cards = grid.querySelectorAll('.project-card');
-    cards.forEach((card, index) => {
-        const staggerNum = index + 1;
-        if (staggerNum <= 6) {
-            card.classList.add(`stagger-${staggerNum}`);
-        }
-    });
-
-    // Initialize slideshows after cards are in the DOM
-    initSlideshows();
+  initSlideshows();
 }
 
 /* ============================================================
    6. SLIDESHOW LOGIC
-   Auto-advance every 3.5s, pause on hover,
-   prev/next arrows, dot indicators, touch swipe
    ============================================================ */
 function initSlideshows() {
-    const slideshows = document.querySelectorAll('[data-slideshow]');
+  document.querySelectorAll('[data-slideshow]').forEach(slideshow => {
+    const slides = slideshow.querySelectorAll('.slide-img');
+    const dots = slideshow.querySelectorAll('.slide-dot');
+    const prevBtn = slideshow.querySelector('.slide-arrow.prev');
+    const nextBtn = slideshow.querySelector('.slide-arrow.next');
 
-    slideshows.forEach(slideshow => {
-        const slides = slideshow.querySelectorAll('.slide-img');
-        const dots = slideshow.querySelectorAll('.slide-dot');
-        const prevBtn = slideshow.querySelector('.slide-arrow.prev');
-        const nextBtn = slideshow.querySelector('.slide-arrow.next');
+    if (slides.length <= 1) return;
 
-        // Nothing to slide if only one image
-        if (slides.length <= 1) return;
+    let current = 0;
+    let interval = null;
+    let touchStartX = 0;
 
-        let currentSlide = 0;
-        let autoplayInterval = null;
-        let touchStartX = 0;
-        let touchEndX = 0;
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
 
-        /* ---- Core: go to a specific slide ---- */
-        function goToSlide(index) {
-            // Remove active from current
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
 
-            // Clamp index within bounds
-            currentSlide = (index + slides.length) % slides.length;
+    function start() {
+      stop();
+      interval = setInterval(next, 3500);
+    }
 
-            // Add active to new slide
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
+    function stop() {
+      clearInterval(interval);
+      interval = null;
+    }
 
-        function nextSlide() {
-            goToSlide(currentSlide + 1);
-        }
+    slideshow.addEventListener('mouseenter', stop);
+    slideshow.addEventListener('mouseleave', start);
 
-        function prevSlide() {
-            goToSlide(currentSlide - 1);
-        }
+    if (prevBtn) prevBtn.addEventListener('click', e => { e.stopPropagation(); prev(); start(); });
+    if (nextBtn) nextBtn.addEventListener('click', e => { e.stopPropagation(); next(); start(); });
 
-        /* ---- Autoplay ---- */
-        function startAutoplay() {
-            stopAutoplay(); // clear any existing interval first
-            autoplayInterval = setInterval(nextSlide, 3500);
-        }
-
-        function stopAutoplay() {
-            if (autoplayInterval) {
-                clearInterval(autoplayInterval);
-                autoplayInterval = null;
-            }
-        }
-
-        /* ---- Event Listeners ---- */
-
-        // Pause autoplay on hover
-        slideshow.addEventListener('mouseenter', stopAutoplay);
-        slideshow.addEventListener('mouseleave', startAutoplay);
-
-        // Previous arrow
-        if (prevBtn) {
-            prevBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                prevSlide();
-                startAutoplay(); // reset timer after manual nav
-            });
-        }
-
-        // Next arrow
-        if (nextBtn) {
-            nextBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                nextSlide();
-                startAutoplay(); // reset timer after manual nav
-            });
-        }
-
-        // Dot indicators
-        dots.forEach(dot => {
-            dot.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const targetIndex = parseInt(dot.dataset.index, 10);
-                goToSlide(targetIndex);
-                startAutoplay(); // reset timer after manual nav
-            });
-        });
-
-        // Touch swipe detection
-        slideshow.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        slideshow.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            const diff = touchStartX - touchEndX;
-
-            // Minimum swipe distance: 50px
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    nextSlide(); // swiped left → next
-                } else {
-                    prevSlide(); // swiped right → prev
-                }
-                startAutoplay(); // reset timer after swipe
-            }
-        }, { passive: true });
-
-        // Start autoplay
-        startAutoplay();
+    dots.forEach(dot => {
+      dot.addEventListener('click', e => {
+        e.stopPropagation();
+        goTo(parseInt(dot.dataset.index, 10));
+        start();
+      });
     });
+
+    slideshow.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    slideshow.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); start(); }
+    }, { passive: true });
+
+    start();
+  });
 }
 
 /* ============================================================
-   7. DEMO MODAL LOGIC
-   Opens YouTube embed on "Watch Demo" click
-   Closes on X, overlay click, or Escape key
+   7. DEMO MODAL
    ============================================================ */
 function initDemoModal() {
-    const overlay = document.getElementById('demoModal');
-    const iframe = document.getElementById('modalIframe');
-    const modalTitle = document.getElementById('modalTitle');
-    const closeBtn = document.getElementById('modalClose');
+  const overlay = document.getElementById('demoModal');
+  const iframe = document.getElementById('modalIframe');
+  const title = document.getElementById('modalTitle');
+  const closeBtn = document.getElementById('modalClose');
 
-    if (!overlay || !iframe || !closeBtn) return;
+  if (!overlay || !iframe || !closeBtn) return;
 
-    /* ---- Open modal ---- */
-    function openModal(demoUrl, projectTitle) {
-        iframe.src = demoUrl + '?rel=0&autoplay=1';
-        modalTitle.textContent = projectTitle + ' — Demo';
-        overlay.classList.add('is-open');
-        overlay.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
+  function open(url, name) {
+    iframe.src = url + '?rel=0&autoplay=1';
+    title.textContent = name + ' — Demo';
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => closeBtn.focus(), 100);
+  }
 
-        // Focus the close button for accessibility
-        setTimeout(() => closeBtn.focus(), 100);
+  function close() {
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-demo');
+    if (btn && btn.dataset.demo && btn.dataset.demo !== '#') {
+      open(btn.dataset.demo, btn.dataset.title);
     }
+  });
 
-    /* ---- Close modal ---- */
-    function closeModal() {
-        overlay.classList.remove('is-open');
-        overlay.setAttribute('aria-hidden', 'true');
-        iframe.src = ''; // stop video playback
-        document.body.style.overflow = '';
-    }
-
-    /* ---- Delegate click on all .btn-demo buttons ----
-       Uses event delegation because cards are rendered dynamically */
-    document.addEventListener('click', (e) => {
-        const demoBtn = e.target.closest('.btn-demo');
-        if (!demoBtn) return;
-
-        const demoUrl = demoBtn.dataset.demo;
-        const projectTitle = demoBtn.dataset.title;
-
-        if (demoUrl && demoUrl !== '#') {
-            openModal(demoUrl, projectTitle);
-        }
-    });
-
-    /* ---- Close on X button ---- */
-    closeBtn.addEventListener('click', closeModal);
-
-    /* ---- Close on overlay click (outside modal container) ---- */
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) closeModal();
-    });
-
-    /* ---- Close on Escape key ---- */
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
-            closeModal();
-        }
-    });
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('is-open')) close(); });
 }
 
 /* ============================================================
-   8. INIT ON DOM READY
+   8. INIT
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-    renderProjects();
-    initDemoModal();
+  renderProjects();
+  initDemoModal();
 });

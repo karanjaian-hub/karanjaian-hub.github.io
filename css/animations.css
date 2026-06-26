@@ -1,47 +1,70 @@
+/* ============================================================
+   Ian Karanja Murimi — Portfolio
+   css/animations.css — Keyframes + Scroll Reveal System
+   ============================================================ */
+
+/* ============================================================
+   1. KEYFRAMES
+   ============================================================ */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 @keyframes fadeInLeft {
   from { opacity: 0; transform: translateX(-40px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
 @keyframes fadeInRight {
   from { opacity: 0; transform: translateX(40px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.92); }
   to { opacity: 1; transform: scale(1); }
 }
+
 @keyframes rotateRing {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.4); opacity: 0.6; }
 }
+
 @keyframes bounceY {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(8px); }
 }
+
 @keyframes glowPulse {
   0%, 100% { box-shadow: 0 0 20px rgba(204, 255, 0, 0.2); }
   50% { box-shadow: 0 0 40px rgba(204, 255, 0, 0.4); }
 }
 
-/* Desktop only — hero animations */
+/* ============================================================
+   2. HERO ENTRANCE — Desktop only
+   ============================================================ */
 @media (min-width: 769px) {
   #hero .hero-label { animation: fadeInLeft 700ms 200ms both; }
-  #hero .hero-name { animation: fadeInUp 800ms 300ms both; }
+  #hero .hero-name  { animation: fadeInUp 800ms 300ms both; }
   #hero .hero-title { animation: fadeInUp 700ms 400ms both; }
-  #hero .hero-bio { animation: fadeInUp 700ms 500ms both; }
-  #hero .hero-cta { animation: fadeInUp 700ms 600ms both; }
+  #hero .hero-bio   { animation: fadeInUp 700ms 500ms both; }
+  #hero .hero-cta   { animation: fadeInUp 700ms 600ms both; }
   #hero .hero-right { animation: fadeInRight 800ms 400ms both; }
+  .hero-available-badge { animation: fadeInUp 600ms 1000ms both; }
+  .hero-scroll-hint { animation: bounceY 2s ease-in-out infinite; }
+  .btn-primary:hover { animation: glowPulse 1.5s ease-in-out infinite; }
 }
 
-/* Desktop only — scroll reveal */
+/* ============================================================
+   3. SCROLL REVEAL — Desktop only
+   Elements start hidden, JS adds .is-visible on viewport enter
+   ============================================================ */
 @media (min-width: 769px) {
   [data-animate] {
     opacity: 0;
@@ -49,30 +72,37 @@
     transition: opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+
   [data-animate="fade-left"] {
     opacity: 0;
     transform: translateX(-40px);
     transition: opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+
   [data-animate="fade-right"] {
     opacity: 0;
     transform: translateX(40px);
     transition: opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+
   [data-animate="scale"] {
     opacity: 0;
     transform: scale(0.92);
     transition: opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+
   [data-animate].is-visible {
     opacity: 1;
-    transform: translateY(0) translateX(0) scale(1);
+    transform: none;
   }
 }
 
+/* ============================================================
+   4. STAGGER DELAYS
+   ============================================================ */
 .stagger-1 { transition-delay: 100ms; }
 .stagger-2 { transition-delay: 200ms; }
 .stagger-3 { transition-delay: 300ms; }
@@ -80,14 +110,20 @@
 .stagger-5 { transition-delay: 500ms; }
 .stagger-6 { transition-delay: 600ms; }
 
-.project-card {
-  transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              border-color 400ms ease, box-shadow 400ms ease;
-}
+/* ============================================================
+   5. TAG STAGGER
+   ============================================================ */
+.tag.tag-hidden { opacity: 0; transform: translateY(8px); transition: opacity 400ms ease, transform 400ms ease; }
+.tag.tag-visible { opacity: 1; transform: translateY(0); }
 
-.footer-back-top { opacity: 0; transition: opacity 400ms ease; }
-.footer-back-top.visible { opacity: 1; display: inline-flex; }
+/* ============================================================
+   6. FOOTER BACK TO TOP
+   ============================================================ */
+.footer-back-top { transition: opacity var(--transition-base); }
 
+/* ============================================================
+   7. REDUCED MOTION
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -95,4 +131,3 @@
     transition-duration: 0.01ms !important;
   }
 }
-/* cache bust Sat Jun  6 01:06:47 PM EAT 2026 */
