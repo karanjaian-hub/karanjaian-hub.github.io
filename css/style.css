@@ -327,7 +327,6 @@ nav.scrolled {
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
   padding-top: 80px;
 }
 
@@ -1175,7 +1174,7 @@ footer {
   .projects-grid { grid-template-columns: 1fr; }
   .project-card.featured { grid-column: span 1; }
   .project-card.featured .card-inner { grid-template-columns: 1fr; }
-  .project-card.featured .card-slideshow { min-height: 320px; aspect-ratio: 9/16; }
+  .project-card.featured .card-slideshow { min-height: 260px; height: 260px; aspect-ratio: unset; }
   .project-card.featured .card-slideshow .slide-img { object-fit: contain; padding: 0; }
 
   .contact-buttons { flex-direction: column; align-items: center; }
