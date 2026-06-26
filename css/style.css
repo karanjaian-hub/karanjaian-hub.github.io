@@ -109,10 +109,11 @@ button { font-family: inherit; }
    SKIP LINK
    ============================================================ */
 .skip-link {
-  position: absolute; top: -100%; left: 16px;
+  position: absolute; top: -200px; left: 16px;
   background: var(--accent); color: var(--black);
   padding: 8px 16px; border-radius: var(--r-sm);
   font-weight: 600; font-size: 14px; z-index: 9999;
+  transition: top 0.2s;
 }
 .skip-link:focus { top: 12px; }
 
@@ -137,6 +138,7 @@ button { font-family: inherit; }
 }
 
 .accent { color: var(--accent); }
+.lime { color: var(--accent); }
 
 .section-head { margin-bottom: 64px; }
 
@@ -229,9 +231,10 @@ button { font-family: inherit; }
   position: fixed; inset: 0; background: var(--black);
   z-index: 999; display: flex; flex-direction: column;
   justify-content: center; align-items: center; gap: 40px;
-  opacity: 0; pointer-events: none; transition: opacity var(--base) var(--ease);
+  opacity: 0; pointer-events: none; visibility: hidden;
+  transition: opacity var(--base) var(--ease), visibility var(--base) var(--ease);
 }
-.mob-menu.on { opacity: 1; pointer-events: all; }
+.mob-menu.on { opacity: 1; pointer-events: all; visibility: visible; }
 .mob-menu ul { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 32px; }
 .mob-menu a {
   font-family: 'Syne', sans-serif; font-weight: 700;
@@ -297,8 +300,9 @@ button { font-family: inherit; }
   display: flex; flex-direction: column;
 }
 
-.name-line { display: block; overflow: hidden; }
+.name-line { display: block; overflow: hidden; color: var(--white); }
 .name-line.accent { color: var(--accent); }
+.lime { color: var(--accent); }
 
 .hero-bottom {
   display: grid; grid-template-columns: 1fr auto;
