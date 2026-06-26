@@ -291,7 +291,7 @@ button { font-family: inherit; }
   background: #22C55E; animation: pulse 2s infinite; flex-shrink: 0;
 }
 
-.hero-name-wrap { overflow: hidden; max-width: 100%; }
+.hero-name-wrap { width: 100%; }
 
 .hero-name {
   font-family: 'Syne', sans-serif; font-weight: 800;
@@ -670,7 +670,7 @@ footer { border-top: 1px solid var(--border); padding: 32px 0; }
    RESPONSIVE — TABLET
    ============================================================ */
 @media (max-width: 1024px) {
-  .hero-name { font-size: clamp(60px, 10vw, 120px); }
+
   .hero-bottom { grid-template-columns: 1fr; gap: 32px; }
   .hero-right-bottom { display: none; }
   .about-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
@@ -685,8 +685,11 @@ footer { border-top: 1px solid var(--border); padding: 32px 0; }
   .nav-list { display: none; }
   .burger { display: flex; }
 
+  .hero-name-wrap { width: 100%; overflow: visible; }
+  .hero-name { font-size: clamp(36px, 12vw, 60px); letter-spacing: -1px; line-height: 0.95; }
+
   #hero { padding: 90px 0 60px; }
-  .hero-name { font-size: clamp(36px, 10vw, 64px); letter-spacing: -1px; line-height: 1.0; }
+
   .hero-top { justify-content: flex-start; flex-direction: column; align-items: flex-start; }
   .hero-bottom { grid-template-columns: 1fr; }
   .hero-right-bottom { display: none; }
@@ -726,7 +729,7 @@ footer { border-top: 1px solid var(--border); padding: 32px 0; }
    SMALL MOBILE
    ============================================================ */
 @media (max-width: 400px) {
-  .hero-name { font-size: clamp(44px, 13vw, 64px); }
+
   .stats-grid { grid-template-columns: 1fr; gap: 12px; }
   .contact-title { font-size: clamp(36px, 10vw, 56px); }
 }
