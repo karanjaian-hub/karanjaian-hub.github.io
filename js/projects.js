@@ -1,40 +1,17 @@
 /* ============================================================
    Ian Karanja Murimi — Portfolio
-   js/projects.js — Project Data + Card Rendering + Slideshow
-   "African Precision" — Electric Lime on Near-Black
+   js/projects.js — Project Data + Rendering + Slideshow
    ============================================================ */
 
-/* ============================================================
-   1. PROJECT DATA — V3
-   RentiFi replaced with RentFlow Kenya
-   All GitHub repos linked
-   ============================================================ */
 const projects = [
   {
     id: 'akiba',
     name: 'Akiba',
     tagline: 'Every shilling has a story.',
-    description: 'A smart personal finance app for Kenya that automatically imports and categorizes M-Pesa transactions, tracks budgets, and delivers AI-powered financial insights — built on a production-grade microservices backend.',
-    category: 'Mobile · Full-Stack',
-    tags: ['Kotlin', 'Jetpack Compose', 'Vert.x 5', 'Java 21', 'RabbitMQ', 'Redis', 'PostgreSQL', 'Groq AI', 'M-Pesa Daraja', 'Docker', 'Microservices'],
-    images: [
-      'assets/images/akiba-1.jpg',
-      'assets/images/akiba-2.jpg',
-      'assets/images/akiba-3.jpg',
-      'assets/images/akiba-4.jpg',
-      'assets/images/akiba-5.jpg',
-      'assets/images/akiba-6.jpg',
-      'assets/images/akiba-7.jpg',
-      'assets/images/akiba-8.jpg',
-      'assets/images/akiba-9.jpg',
-      'assets/images/akiba-10.jpg',
-      'assets/images/akiba-11.jpg',
-      'assets/images/akiba-12.jpg',
-      'assets/images/akiba-13.jpg',
-      'assets/images/akiba-14.jpg',
-      'assets/images/akiba-15.jpg',
-      'assets/images/akiba-16.jpg'
-    ],
+    desc: 'A smart personal finance app for Kenya that automatically imports and categorizes M-Pesa transactions, tracks budgets, and delivers AI-powered financial insights — built on a production-grade microservices backend.',
+    cat: 'Mobile · Full-Stack',
+    tags: ['Kotlin','Jetpack Compose','Vert.x 5','Java 21','RabbitMQ','Redis','PostgreSQL','Groq AI','M-Pesa Daraja','Docker','Microservices'],
+    images: ['akiba-1','akiba-2','akiba-3','akiba-4','akiba-5','akiba-6','akiba-7','akiba-8','akiba-9','akiba-10','akiba-11','akiba-12','akiba-13','akiba-14','akiba-15','akiba-16'].map(n=>`assets/images/${n}.jpg`),
     github: 'https://github.com/karanjaian-hub/akiba',
     demo: 'https://www.youtube.com/embed/nkgpPm89e0M',
     featured: true
@@ -43,28 +20,10 @@ const projects = [
     id: 'careconnect',
     name: 'CareConnect',
     tagline: 'Referrals that reach the right doctor, fast.',
-    description: 'A digital platform that streamlines patient referrals between healthcare facilities, replacing paperwork and phone calls with a fast, trackable, HL7 FHIR-compliant system.',
-    category: 'Full-Stack · Healthtech',
-    tags: ['Java 21', 'Spring Boot 3', 'React 18', 'PostgreSQL', 'Redis', 'TailwindCSS', 'Docker', 'HL7 FHIR', 'GitHub Actions'],
-    images: [
-      'assets/images/careconnect-1.jpg',
-      'assets/images/careconnect-2.jpg',
-      'assets/images/careconnect-3.jpg',
-      'assets/images/careconnect-4.jpg',
-      'assets/images/careconnect-5.jpg',
-      'assets/images/careconnect-6.jpg',
-      'assets/images/careconnect-7.jpg',
-      'assets/images/careconnect-8.jpg',
-      'assets/images/careconnect-9.jpg',
-      'assets/images/careconnect-10.jpg',
-      'assets/images/careconnect-11.jpg',
-      'assets/images/careconnect-12.jpg',
-      'assets/images/careconnect-13.jpg',
-      'assets/images/careconnect-14.jpg',
-      'assets/images/careconnect-15.jpg',
-      'assets/images/careconnect-16.jpg',
-      'assets/images/careconnect-17.jpg'
-    ],
+    desc: 'A digital platform that streamlines patient referrals between healthcare facilities, replacing paperwork and phone calls with a fast, trackable, HL7 FHIR-compliant system.',
+    cat: 'Full-Stack · Healthtech',
+    tags: ['Java 21','Spring Boot 3','React 18','PostgreSQL','Redis','TailwindCSS','Docker','HL7 FHIR','GitHub Actions'],
+    images: Array.from({length:17},(_,i)=>`assets/images/careconnect-${i+1}.jpg`),
     github: 'https://github.com/karanjaian-hub/careconnect',
     demo: '#',
     featured: false
@@ -73,19 +32,10 @@ const projects = [
     id: 'eventflow',
     name: 'EventFlow',
     tagline: 'Half a million invitations. Zero missed RSVPs.',
-    description: 'A scalable event management platform that handles mass guest invitations and tracks RSVPs in real time — powered by Kafka, WebSockets, and Redis distributed locks.',
-    category: 'Full-Stack · Systems',
-    tags: ['Java 17', 'Spring Boot', 'Apache Kafka', 'WebSocket', 'React 18', 'Redis', 'PostgreSQL', 'Docker'],
-    images: [
-      'assets/images/eventflow-1.jpg',
-      'assets/images/eventflow-2.jpg',
-      'assets/images/eventflow-3.jpg',
-      'assets/images/eventflow-4.jpg',
-      'assets/images/eventflow-5.jpg',
-      'assets/images/eventflow-6.jpg',
-      'assets/images/eventflow-7.jpg',
-      'assets/images/eventflow-8.jpg'
-    ],
+    desc: 'A scalable event management platform that handles mass guest invitations and tracks RSVPs in real time — powered by Kafka, WebSockets, and Redis distributed locks.',
+    cat: 'Full-Stack · Systems',
+    tags: ['Java 17','Spring Boot','Apache Kafka','WebSocket','React 18','Redis','PostgreSQL','Docker'],
+    images: Array.from({length:8},(_,i)=>`assets/images/eventflow-${i+1}.jpg`),
     github: 'https://github.com/karanjaian-hub/eventflow',
     demo: 'https://www.youtube.com/embed/y_LIegszRIw',
     featured: false
@@ -94,16 +44,10 @@ const projects = [
     id: 'noteflow',
     name: 'NoteFlow',
     tagline: 'Every keystroke, safely stored.',
-    description: 'A cloud-native note-taking web app with rich text editing, auto-save, tags, folders, and search — built on a reactive microservices backend with a persistent save queue and zero data loss.',
-    category: 'Full-Stack · Backend',
-    tags: ['Java 21', 'Vert.x 5', 'Redis', 'PostgreSQL', 'Vanilla JS', 'Docker', 'Railway', 'Microservices'],
-    images: [
-      'assets/images/noteflow-1.jpg',
-      'assets/images/noteflow-2.jpg',
-      'assets/images/noteflow-3.jpg',
-      'assets/images/noteflow-4.jpg',
-      'assets/images/noteflow-5.jpg'
-    ],
+    desc: 'A cloud-native note-taking web app with rich text editing, auto-save, tags, folders, and search — built on a reactive microservices backend with a persistent save queue and zero data loss.',
+    cat: 'Full-Stack · Backend',
+    tags: ['Java 21','Vert.x 5','Redis','PostgreSQL','Vanilla JS','Docker','Railway','Microservices'],
+    images: Array.from({length:5},(_,i)=>`assets/images/noteflow-${i+1}.jpg`),
     github: 'https://github.com/karanjaian-hub/noteflow',
     demo: 'https://www.youtube.com/embed/hlrW0PpHrvo',
     featured: false
@@ -112,255 +56,175 @@ const projects = [
     id: 'rentflow',
     name: 'RentFlow Kenya',
     tagline: 'Pay rent. Get a receipt. Automatically.',
-    description: 'A comprehensive SaaS platform that automates rent collection, utility billing, and property management for Kenyan landlords — powered by M-Pesa, with WhatsApp-integrated communication and automated landlord payouts.',
-    category: 'Full-Stack · SaaS',
-    tags: ['Java 21', 'Spring Boot 3', 'React 18', 'TypeScript', 'PostgreSQL', 'Redis', 'M-Pesa Daraja', 'WhatsApp Business API', 'AWS', 'Docker'],
-    images: [
-      'assets/images/rentflow-1.jpg',
-      'assets/images/rentflow-2.jpg',
-      'assets/images/rentflow-3.jpg'
-    ],
+    desc: 'A comprehensive SaaS platform that automates rent collection, utility billing, and property management for Kenyan landlords — powered by M-Pesa, with WhatsApp-integrated communication and automated landlord payouts.',
+    cat: 'Full-Stack · SaaS',
+    tags: ['Java 21','Spring Boot 3','React 18','TypeScript','PostgreSQL','Redis','M-Pesa Daraja','WhatsApp Business API','AWS','Docker'],
+    images: Array.from({length:3},(_,i)=>`assets/images/rentflow-${i+1}.jpg`),
     github: 'https://github.com/karanjaian-hub/rentflow-kenya',
     demo: '#',
     featured: false
   }
 ];
 
-/* ============================================================
-   2. GITHUB SVG ICON
-   ============================================================ */
-const githubIcon = `
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-  </svg>
-`;
+const ghIcon = `<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>`;
 
-/* ============================================================
-   3. BUILD STANDARD CARD
-   ============================================================ */
-function buildStandardCard(project) {
-  const initial = project.name.charAt(0);
+function demoBtn(p) {
+  if (p.demo !== '#') {
+    return `<button class="btn-ghost btn-demo" data-demo="${p.demo}" data-name="${p.name}" style="padding:10px 20px;font-size:13px;">▶ Watch Demo</button>`;
+  }
+  return `<button class="btn-ghost" disabled style="opacity:0.4;padding:10px 20px;font-size:13px;">▶ Demo Soon</button>`;
+}
 
-  const imagesHTML = project.images.map((img, i) => `
-    <img src="${img}" alt="${project.name} screenshot ${i + 1}"
-      class="slide-img${i === 0 ? ' active' : ''}"
+function slides(imgs, name) {
+  return imgs.map((src, i) => `
+    <img src="${src}" alt="${name} screenshot ${i+1}"
+      class="slide${i===0?' on':''}"
       loading="lazy" width="1280" height="720"
-      onerror="this.style.display='none'">
-  `).join('');
+      onerror="this.style.display='none'">`).join('');
+}
 
-  const dotsHTML = project.images.map((_, i) => `
-    <button class="slide-dot${i === 0 ? ' active' : ''}"
-      data-index="${i}" aria-label="Go to slide ${i + 1}"></button>
-  `).join('');
+function dotsBtns(imgs) {
+  return imgs.map((_,i) => `<button class="dot${i===0?' on':''}" data-i="${i}" aria-label="Slide ${i+1}"></button>`).join('');
+}
 
-  const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+function tags(arr) {
+  return arr.map(t=>`<span class="tag">${t}</span>`).join('');
+}
 
-  const demoButton = project.demo !== '#'
-    ? `<button class="btn btn-outline btn-demo"
-         data-demo="${project.demo}" data-title="${project.name}"
-         aria-label="Watch ${project.name} demo">▶ Watch Demo</button>`
-    : `<button class="btn btn-outline" disabled title="Demo coming soon"
-         aria-label="${project.name} demo coming soon">▶ Demo Soon</button>`;
-
+function buildFeatured(p) {
   return `
-    <article class="project-card" data-id="${project.id}" data-animate role="listitem">
-      <div class="card-slideshow" data-slideshow data-initial="${initial}">
-        ${imagesHTML}
-        <div class="slide-dots">${dotsHTML}</div>
-        <button class="slide-arrow prev" aria-label="Previous screenshot">‹</button>
-        <button class="slide-arrow next" aria-label="Next screenshot">›</button>
+  <article class="project-card featured s1" data-animate data-id="${p.id}">
+    <div class="feat-inner">
+      <div class="slideshow" data-ss data-i="${p.name.charAt(0)}">
+        ${slides(p.images, p.name)}
+        <div class="dots">${dotsBtns(p.images)}</div>
+        <button class="arrow l">‹</button>
+        <button class="arrow r">›</button>
       </div>
       <div class="card-body">
-        <p class="card-category">${project.category}</p>
-        <h3 class="card-title">${project.name}</h3>
-        <p class="card-tagline">${project.tagline}</p>
-        <div class="card-tags">${tagsHTML}</div>
+        <div class="feat-badge">★ Featured Project</div>
+        <p class="card-cat">${p.cat}</p>
+        <h3 class="card-title">${p.name}</h3>
+        <p class="card-line">${p.tagline}</p>
+        <p class="card-desc">${p.desc}</p>
+        <div class="card-tags">${tags(p.tags)}</div>
         <div class="card-actions">
-          <a href="${project.github}" class="btn-icon"
-            aria-label="View ${project.name} on GitHub"
-            target="_blank" rel="noopener noreferrer">${githubIcon}</a>
-          ${demoButton}
+          <a href="${p.github}" class="icon-btn" target="_blank" rel="noopener" aria-label="GitHub">${ghIcon}</a>
+          ${demoBtn(p)}
         </div>
       </div>
-    </article>
-  `;
+    </div>
+  </article>`;
 }
 
-/* ============================================================
-   4. BUILD FEATURED CARD (AKIBA)
-   ============================================================ */
-function buildFeaturedCard(project) {
-  const initial = project.name.charAt(0);
-
-  const imagesHTML = project.images.map((img, i) => `
-    <img src="${img}" alt="${project.name} screenshot ${i + 1}"
-      class="slide-img${i === 0 ? ' active' : ''}"
-      loading="lazy" width="1080" height="1920"
-      onerror="this.style.display='none'">
-  `).join('');
-
-  const dotsHTML = project.images.map((_, i) => `
-    <button class="slide-dot${i === 0 ? ' active' : ''}"
-      data-index="${i}" aria-label="Go to slide ${i + 1}"></button>
-  `).join('');
-
-  const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-
-  const demoButton = project.demo !== '#'
-    ? `<button class="btn btn-outline btn-demo"
-         data-demo="${project.demo}" data-title="${project.name}"
-         aria-label="Watch ${project.name} demo">▶ Watch Demo</button>`
-    : `<button class="btn btn-outline" disabled title="Demo coming soon">▶ Demo Soon</button>`;
-
+function buildCard(p, idx) {
   return `
-    <article class="project-card featured" data-id="${project.id}" data-animate role="listitem">
-      <div class="card-inner">
-        <div class="card-slideshow" data-slideshow data-initial="${initial}">
-          ${imagesHTML}
-          <div class="slide-dots">${dotsHTML}</div>
-          <button class="slide-arrow prev" aria-label="Previous screenshot">‹</button>
-          <button class="slide-arrow next" aria-label="Next screenshot">›</button>
-        </div>
-        <div class="card-body">
-          <div class="featured-badge">★ Featured Project</div>
-          <p class="card-category">${project.category}</p>
-          <h3 class="card-title">${project.name}</h3>
-          <p class="card-tagline">${project.tagline}</p>
-          <p class="card-description">${project.description}</p>
-          <div class="card-tags">${tagsHTML}</div>
-          <div class="card-actions">
-            <a href="${project.github}" class="btn-icon"
-              aria-label="View ${project.name} on GitHub"
-              target="_blank" rel="noopener noreferrer">${githubIcon}</a>
-            ${demoButton}
-          </div>
-        </div>
+  <article class="project-card s${idx}" data-animate data-id="${p.id}">
+    <div class="slideshow" data-ss data-i="${p.name.charAt(0)}">
+      ${slides(p.images, p.name)}
+      <div class="dots">${dotsBtns(p.images)}</div>
+      <button class="arrow l">‹</button>
+      <button class="arrow r">›</button>
+    </div>
+    <div class="card-body">
+      <p class="card-cat">${p.cat}</p>
+      <h3 class="card-title">${p.name}</h3>
+      <p class="card-line">${p.tagline}</p>
+      <div class="card-tags">${tags(p.tags)}</div>
+      <div class="card-actions">
+        <a href="${p.github}" class="icon-btn" target="_blank" rel="noopener" aria-label="GitHub">${ghIcon}</a>
+        ${demoBtn(p)}
       </div>
-    </article>
-  `;
+    </div>
+  </article>`;
 }
 
-/* ============================================================
-   5. RENDER ALL PROJECTS
-   ============================================================ */
 function renderProjects() {
-  const grid = document.getElementById('projects-grid');
+  const grid = document.getElementById('projectsGrid');
   if (!grid) return;
 
-  grid.innerHTML = projects.map(p => p.featured ? buildFeaturedCard(p) : buildStandardCard(p)).join('');
-
-  const cards = grid.querySelectorAll('.project-card');
-  cards.forEach((card, i) => {
-    if (i < 6) card.classList.add(`stagger-${i + 1}`);
+  let html = '';
+  let cardIdx = 1;
+  projects.forEach(p => {
+    html += p.featured ? buildFeatured(p) : buildCard(p, Math.min(cardIdx++, 5));
   });
-
+  grid.innerHTML = html;
   initSlideshows();
 }
 
-/* ============================================================
-   6. SLIDESHOW LOGIC
-   ============================================================ */
 function initSlideshows() {
-  document.querySelectorAll('[data-slideshow]').forEach(slideshow => {
-    const slides = slideshow.querySelectorAll('.slide-img');
-    const dots = slideshow.querySelectorAll('.slide-dot');
-    const prevBtn = slideshow.querySelector('.slide-arrow.prev');
-    const nextBtn = slideshow.querySelector('.slide-arrow.next');
-
+  document.querySelectorAll('[data-ss]').forEach(ss => {
+    const slides = ss.querySelectorAll('.slide');
+    const dots   = ss.querySelectorAll('.dot');
+    const prev   = ss.querySelector('.arrow.l');
+    const next   = ss.querySelector('.arrow.r');
     if (slides.length <= 1) return;
 
-    let current = 0;
-    let interval = null;
-    let touchStartX = 0;
+    let cur = 0, timer = null, tx = 0;
 
-    function goTo(index) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = (index + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
+    function go(n) {
+      slides[cur].classList.remove('on');
+      dots[cur].classList.remove('on');
+      cur = (n + slides.length) % slides.length;
+      slides[cur].classList.add('on');
+      dots[cur].classList.add('on');
     }
 
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
+    function start() { stop(); timer = setInterval(() => go(cur+1), 3500); }
+    function stop()  { clearInterval(timer); timer = null; }
 
-    function start() {
-      stop();
-      interval = setInterval(next, 3500);
-    }
+    ss.addEventListener('mouseenter', stop);
+    ss.addEventListener('mouseleave', start);
 
-    function stop() {
-      clearInterval(interval);
-      interval = null;
-    }
+    prev?.addEventListener('click', e => { e.stopPropagation(); go(cur-1); start(); });
+    next?.addEventListener('click', e => { e.stopPropagation(); go(cur+1); start(); });
 
-    slideshow.addEventListener('mouseenter', stop);
-    slideshow.addEventListener('mouseleave', start);
+    dots.forEach(d => d.addEventListener('click', e => { e.stopPropagation(); go(+d.dataset.i); start(); }));
 
-    if (prevBtn) prevBtn.addEventListener('click', e => { e.stopPropagation(); prev(); start(); });
-    if (nextBtn) nextBtn.addEventListener('click', e => { e.stopPropagation(); next(); start(); });
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', e => {
-        e.stopPropagation();
-        goTo(parseInt(dot.dataset.index, 10));
-        start();
-      });
-    });
-
-    slideshow.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-    slideshow.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].screenX;
-      if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); start(); }
-    }, { passive: true });
+    ss.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, {passive:true});
+    ss.addEventListener('touchend',   e => {
+      const diff = tx - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) { go(diff > 0 ? cur+1 : cur-1); start(); }
+    }, {passive:true});
 
     start();
   });
 }
 
-/* ============================================================
-   7. DEMO MODAL
-   ============================================================ */
-function initDemoModal() {
-  const overlay = document.getElementById('demoModal');
-  const iframe = document.getElementById('modalIframe');
+function initModal() {
+  const modal = document.getElementById('modal');
+  const frame = document.getElementById('modalFrame');
   const title = document.getElementById('modalTitle');
-  const closeBtn = document.getElementById('modalClose');
-
-  if (!overlay || !iframe || !closeBtn) return;
+  const close = document.getElementById('modalClose');
+  if (!modal) return;
 
   function open(url, name) {
-    iframe.src = url + '?rel=0&autoplay=1';
+    frame.src = url + '?rel=0&autoplay=1';
     title.textContent = name + ' — Demo';
-    overlay.classList.add('is-open');
-    overlay.setAttribute('aria-hidden', 'false');
+    modal.classList.add('on');
+    modal.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
-    setTimeout(() => closeBtn.focus(), 100);
+    setTimeout(() => close.focus(), 100);
   }
 
-  function close() {
-    overlay.classList.remove('is-open');
-    overlay.setAttribute('aria-hidden', 'true');
-    iframe.src = '';
+  function shut() {
+    modal.classList.remove('on');
+    modal.setAttribute('aria-hidden','true');
+    frame.src = '';
     document.body.style.overflow = '';
   }
 
   document.addEventListener('click', e => {
     const btn = e.target.closest('.btn-demo');
-    if (btn && btn.dataset.demo && btn.dataset.demo !== '#') {
-      open(btn.dataset.demo, btn.dataset.title);
-    }
+    if (btn?.dataset.demo && btn.dataset.demo !== '#') open(btn.dataset.demo, btn.dataset.name);
   });
 
-  closeBtn.addEventListener('click', close);
-  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('is-open')) close(); });
+  close.addEventListener('click', shut);
+  modal.addEventListener('click', e => { if (e.target === modal) shut(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('on')) shut(); });
 }
 
-/* ============================================================
-   8. INIT
-   ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
-  initDemoModal();
+  initModal();
 });
