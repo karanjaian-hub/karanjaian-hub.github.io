@@ -414,12 +414,14 @@ nav.scrolled {
   position: relative;
   width: 320px;
   height: 320px;
+  overflow: visible;
 }
 
 .hero-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   border-radius: var(--radius-lg);
   position: relative;
   z-index: 2;
@@ -1174,7 +1176,7 @@ footer {
   .projects-grid { grid-template-columns: 1fr; }
   .project-card.featured { grid-column: span 1; }
   .project-card.featured .card-inner { grid-template-columns: 1fr; height: auto; }
-  .project-card.featured .card-slideshow { min-height: 260px; height: 260px; aspect-ratio: unset; }
+  .project-card.featured .card-slideshow { aspect-ratio: 3/4; height: auto; min-height: unset; }
   .project-card.featured .card-slideshow .slide-img { object-fit: contain; padding: 0; }
 
   .contact-buttons { flex-direction: column; align-items: center; }
