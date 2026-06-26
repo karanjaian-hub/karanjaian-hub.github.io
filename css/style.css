@@ -295,12 +295,13 @@ button { font-family: inherit; }
 
 .hero-name {
   font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: clamp(64px, 9.5vw, 128px);
-  line-height: 0.88; letter-spacing: -4px;
+  font-size: clamp(36px, 13vw, 130px);
+  line-height: 0.92; letter-spacing: -0.03em;
   display: flex; flex-direction: column;
+  width: 100%;
 }
 
-.name-line { display: block; overflow: hidden; color: var(--white); }
+.name-line { display: block; color: var(--white); }
 .name-line.accent { color: var(--accent); }
 .lime { color: var(--accent); }
 
@@ -685,8 +686,8 @@ footer { border-top: 1px solid var(--border); padding: 32px 0; }
   .nav-list { display: none; }
   .burger { display: flex; }
 
-  .hero-name-wrap { width: 100%; overflow: visible; }
-  .hero-name { font-size: clamp(36px, 12vw, 60px); letter-spacing: -1px; line-height: 0.95; }
+  .hero-name-wrap { width: 100%; }
+
 
   #hero { padding: 90px 0 60px; }
 
