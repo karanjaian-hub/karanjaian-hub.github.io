@@ -25,7 +25,7 @@ const projects = [
     tags: ['Java 21','Spring Boot 3','React 18','PostgreSQL','Redis','TailwindCSS','Docker','HL7 FHIR','GitHub Actions'],
     images: Array.from({length:17},(_,i)=>`assets/images/careconnect-${i+1}.jpg`),
     github: 'https://github.com/karanjaian-hub/careconnect',
-    demo: '#',
+    demo: 'https://www.youtube.com/embed/WXgyD70kU0o',
     featured: false
   },
   {
