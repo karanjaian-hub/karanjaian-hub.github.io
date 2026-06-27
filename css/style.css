@@ -295,8 +295,8 @@ button { font-family: inherit; }
 
 .hero-name {
   font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: clamp(36px, 11vw, 130px);
-  line-height: 0.92; letter-spacing: -0.02em;
+  font-size: clamp(52px, 8vw, 130px);
+  line-height: 0.92; letter-spacing: -0.03em;
   display: flex; flex-direction: column;
   width: 100%;
 }
@@ -386,7 +386,7 @@ button { font-family: inherit; }
   border-radius: var(--r-lg);
   transform: rotate(-1.5deg);
   position: relative; z-index: 2;
-  filter: grayscale(15%);
+  filter: grayscale(0%);
   transition: transform var(--base) var(--ease);
 }
 .about-img:hover { transform: rotate(0deg); }
@@ -477,7 +477,7 @@ button { font-family: inherit; }
 }
 .project-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 24px 64px rgba(204,255,0,0.07);
+  box-shadow: 0 24px 64px rgba(204,255,0,0.12), 0 0 0 1px rgba(204,255,0,0.1);
   transform: translateY(-6px);
 }
 .project-card.featured { grid-column: span 2; }
@@ -620,6 +620,37 @@ button { font-family: inherit; }
 /* ============================================================
    FOOTER
    ============================================================ */
+/* Marquee ticker */
+.ticker-wrap {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  overflow: hidden;
+  background: var(--surface);
+}
+.ticker {
+  display: flex;
+  gap: 48px;
+  animation: ticker 20s linear infinite;
+  width: max-content;
+}
+.ticker-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ticker-item::before { content: "★"; color: var(--accent); font-size: 8px; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 footer { border-top: 1px solid var(--border); padding: 32px 0; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; }
 .footer-copy { font-size: 13px; color: var(--faint); }
@@ -687,7 +718,7 @@ footer { border-top: 1px solid var(--border); padding: 32px 0; }
   .burger { display: flex; }
 
   .hero-name-wrap { width: 100%; }
-  .hero-name { font-size: clamp(36px, 11vw, 80px); letter-spacing: -0.01em; }
+  .hero-name { font-size: clamp(44px, 14vw, 80px); letter-spacing: -1px; }
 
 
   #hero { padding: 90px 0 60px; }
