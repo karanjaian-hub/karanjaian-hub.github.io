@@ -295,7 +295,7 @@ button { font-family: inherit; }
 
 .hero-name {
   font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: clamp(52px, 8vw, 130px);
+  font-size: clamp(36px, 11vw, 130px);
   line-height: 0.92; letter-spacing: -0.03em;
   display: flex; flex-direction: column;
   width: 100%;
@@ -484,7 +484,7 @@ button { font-family: inherit; }
 
 /* Slideshow */
 .slideshow {
-  position: relative; overflow: hidden;
+  position: relative;
   aspect-ratio: 16/9; background: var(--black);
 }
 
@@ -582,7 +582,7 @@ button { font-family: inherit; }
 /* ============================================================
    CONTACT
    ============================================================ */
-#contact { padding: 140px 0; text-align: center; position: relative; overflow: hidden; }
+#contact { padding: 140px 0; text-align: center; position: relative; }
 
 .contact-glow {
   position: absolute; top: 50%; left: 50%;
