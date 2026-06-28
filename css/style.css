@@ -120,7 +120,7 @@ button { font-family: inherit; }
 /* ============================================================
    LAYOUT
    ============================================================ */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; overflow: hidden; }
 
 .label {
   font-family: 'JetBrains Mono', monospace;
@@ -462,6 +462,8 @@ button { font-family: inherit; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .project-card {
