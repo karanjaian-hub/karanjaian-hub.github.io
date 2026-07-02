@@ -330,4 +330,89 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursor();
   setTimeout(initCardReveal, 200);
   setTimeout(initTilt, 400);
+  setTimeout(initStaggeredCards, 300);
+  initMagneticButtons();
+  initPageTransitions();
 });
+
+/* ============================================================
+   MAGNETIC BUTTONS
+   ============================================================ */
+function initMagneticButtons() {
+  if (window.innerWidth <= 768) return;
+
+  document.querySelectorAll('.btn-primary, .btn-ghost').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+      btn.style.transition = 'transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94)';
+    });
+    btn.addEventListener('mouseenter', () => {
+      btn.style.transition = 'transform 0.1s ease';
+    });
+  });
+}
+
+/* ============================================================
+   SMOOTH PAGE TRANSITIONS
+   ============================================================ */
+function initPageTransitions() {
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'page-transition';
+  overlay.style.cssText = `
+    position: fixed; inset: 0; background: #CCFF00;
+    z-index: 99998; transform: scaleY(0); transform-origin: bottom;
+    pointer-events: none;
+  `;
+  document.body.appendChild(overlay);
+
+  // Animate out on load
+  setTimeout(() => {
+    overlay.style.transition = 'transform 0.6s cubic-bezier(0.76,0,0.24,1)';
+    overlay.style.transform = 'scaleY(0)';
+    overlay.style.transformOrigin = 'top';
+  }, 100);
+
+  // Animate on nav link clicks
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => {
+      overlay.style.transformOrigin = 'bottom';
+      overlay.style.transition = 'transform 0.4s cubic-bezier(0.76,0,0.24,1)';
+      overlay.style.transform = 'scaleY(0.03)';
+      setTimeout(() => { overlay.style.transform = 'scaleY(0)'; overlay.style.transformOrigin = 'top'; }, 400);
+    });
+  });
+}
+
+/* ============================================================
+   STAGGERED CARD ENTRANCE — Enhanced
+   ============================================================ */
+function initStaggeredCards() {
+  const cards = document.querySelectorAll('.project-card');
+  if (!cards.length) return;
+
+  // Set initial state
+  cards.forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(60px)';
+    card.style.transition = `opacity 0.7s ease ${i * 0.15}s, transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94) ${i * 0.15}s`;
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(card => observer.observe(card));
+}
